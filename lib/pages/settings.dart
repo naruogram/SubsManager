@@ -20,16 +20,18 @@ class SettingsPage extends StatefulWidget {
 class _SettingsState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text(globals.settings,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-          ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text(globals.settings,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+            ],
+          ),
         ),
       ),
     );

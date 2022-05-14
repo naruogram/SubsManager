@@ -25,16 +25,19 @@ class _StreamState extends State<StreamPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text(globals.stream,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-            ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Text(globals.stream,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+              ],
+            ),
           ),
         ),
       ),
