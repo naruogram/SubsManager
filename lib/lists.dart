@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'package:flutter/widgets.dart';
 
+//後々Freezedを使って、クラス定義してみると良い(オブジェクト指向を理解していると感じられました)
 class SubsList {
   String name;
   double fee;

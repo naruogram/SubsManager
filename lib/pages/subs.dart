@@ -23,6 +23,7 @@ class _SubsState extends State<SubsPage> {
 
   void _add() {
     setState(() {
+      //UIページには関数は基本書かない。関数ページを別に作って書く(MVCやMVVMを意識すると良い)
       subsList.add(SubsList(name: "Apple One", fee: 1030.toDouble()));
     });
   }
@@ -34,15 +35,17 @@ class _SubsState extends State<SubsPage> {
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
+            //UIの使い方はかなりいいと思います！
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const Text(globals.subs,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
               Expanded(
+                //SliverWidgetsとかも使ってみるの検討するといいと思うけど、今回はこの使い方で良いと思う！
                 child: ListView.builder(
                   itemBuilder: (BuildContext context, int index) {
-                    return _subsItem(subsList[index].name, subsList[index].fee);
+                    return _subsItem(subsList[index].name,subsList[index].fee);
                   },
                   itemCount: subsList.length,
                 ),
@@ -77,6 +80,7 @@ Widget _subsItem(String name, double fee) {
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         Text(
+          //この書き方は良くないから変換してから feeと書けるように変数やHelperを使って解決すると可読性が上がります
           fee.toString(),
           style: const TextStyle(
               fontSize: 18, color: Color.fromARGB(255, 104, 104, 104)),
